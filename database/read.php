@@ -39,3 +39,18 @@ foreach ($result as $info) {
                     </tr>";
 }
 ?>
+<a href="index.php">
+</a>
+<br><br>
+<table border='1'>
+    <thead>
+        <th>Naam</th>
+        <th>NettoWaarde</th>
+        <th>Land</th>
+        <th>Mobiel</th>
+        <th>Leeftijd</th>
+    </thead>
+    <tbody>
+        <?php echo $tableRows; ?>
+    </tbody>
+</table>
