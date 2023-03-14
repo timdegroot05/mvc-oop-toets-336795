@@ -13,3 +13,29 @@ try {
 } catch(PDOException $e) {
     echo $e->getMessage();
 }
+
+$sql = "SELECT Id
+               ,Naam
+               ,NettoWaarde
+               ,Land
+               ,Mobiel
+               ,Leeftijd
+        FROM mvc-oop-toets";
+
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$result = $statement->fetchAll(PDO::FETCH_OBJ);
+
+$tableRows = "";
+
+foreach ($result as $info) {
+    $tableRows .= "<tr>
+                        <td>$row->Id</td>
+                        <td>$row->Naam</td>
+                        <td>$row->NettoWaarde</td>
+                        <td>$row->Land</td>
+                        <td>$row->Mobiel</td>
+                        <td>$row->Leeftijd</td>
+                    </tr>";
+}
+?>
